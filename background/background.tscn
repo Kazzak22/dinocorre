@@ -60,7 +60,7 @@ motion_scale = Vector2(0.5, 1)
 motion_mirroring = Vector2(50, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="fifhtlayer"]
-position = Vector2(2.84217e-14, 551)
-scale = Vector2(4.64384, 2.63438)
+position = Vector2(-2, 545)
+scale = Vector2(2.1467, 1.43126)
 texture = ExtResource("6_aw6x2")
 centered = false
