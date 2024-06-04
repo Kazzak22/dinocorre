@@ -11,6 +11,8 @@ func  _ready():
 	
 func game_over():
 	GHud.update_high_score_label()
+	$MOBTimer.stop()
+	GHud.mob_counter = 0
 	
 func new_game():
 	print('empieza')
@@ -23,9 +25,10 @@ func _process (delta):
 
 
 func _on_mob_timer_timeout():
-	var mob = mob_scence.instantiate()
-	mob.position.x = $Player.position.x + 1500
-	mob.position.y = 550
-	add_child(mob)
-	mob.hit.connect(game_over)
-	$MOBTimer.wait_time = 2
+	if GHud.mob_counter < 2:
+		var mob = mob_scence.instantiate()
+		mob.position.x = $Player.position.x + 1500
+		mob.position.y = 550
+		add_child(mob)
+		mob.hit.connect(game_over)
+		$MOBTimer.wait_time = 2

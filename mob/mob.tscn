@@ -2,26 +2,25 @@
 
 [ext_resource type="Script" path="res://mob/mob.gd" id="1_6uqre"]
 [ext_resource type="Texture2D" uid="uid://01kdw46muldm" path="res://icon.svg" id="2_a38v4"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_qeys2"]
-radius = 10.5274
+[ext_resource type="Texture2D" uid="uid://tl4e8xyfcsx8" path="res://Sin título.png" id="3_5k1dv"]
 
 [node name="MOB" type="Area2D"]
-position = Vector2(-137, -2)
+position = Vector2(-133, -2)
 script = ExtResource("1_6uqre")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(117, -11)
 
 [node name="SquareS" type="Sprite2D" parent="."]
 position = Vector2(64, -66)
 texture = ExtResource("2_a38v4")
 
-[node name="SquareC" type="CollisionShape2D" parent="."]
-position = Vector2(64, -65)
-scale = Vector2(6.08, 6.16)
-shape = SubResource("CircleShape2D_qeys2")
-disabled = true
+[node name="CollisionA" type="CollisionPolygon2D" parent="."]
+position = Vector2(64, -66)
+polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_5k1dv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

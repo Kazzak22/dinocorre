@@ -3,6 +3,7 @@ extends Area2D
 signal hit
 
 func _ready():
+	GHud.mob_counter = GHud.mob_counter + 1
 	var collisions = [
 		$SquareC,
 	] 
@@ -19,6 +20,8 @@ func _ready():
 	
 
 func _on_visible_on_screen_enabler_2d_screen_exited():
+	if GHud.mob_counter > 0:
+		GHud.mob_counter = GHud.mob_counter - 1
 	queue_free()
 
 
