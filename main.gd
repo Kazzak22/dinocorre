@@ -1,11 +1,14 @@
 extends Node2D
 @export var mob_scene: PackedScene
 
+var musica_fondo = preload("res://dinoplayer/Zero-G -  Distorted Trumpets (Extended to 5 minutes and looped).mp3")
+
 var screen_size : Vector2i
 
 var PlayerInitialPosition
-
 func _ready():
+	Music.stream = musica_fondo
+	Music.play()
 	screen_size = get_window().size
 	PlayerInitialPosition = $Player.position
 	GHud.start_game.connect(new_game)

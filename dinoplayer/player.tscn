@@ -160,7 +160,7 @@ position = Vector2(27.1613, 65)
 scale = Vector2(7.56989, 8.01217)
 sprite_frames = SubResource("SpriteFrames_lt4lh")
 animation = &"run"
-frame_progress = 0.527
+frame_progress = 0.148034
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
@@ -175,3 +175,4 @@ shape = SubResource("RectangleShape2D_kawif")
 
 [node name="AudioJump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_dbs2d")
+volume_db = -14.857

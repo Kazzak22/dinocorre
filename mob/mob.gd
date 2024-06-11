@@ -20,13 +20,12 @@ func _ready():
 	selected_collision.visible = true
 	selected_sprite.visible = true
 
+func _on_body_entered(body):
+	if body.is_in_group("dinosaurio"):
+		print("GAME OVER")
+		hit.emit()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	if GHud.mob_counter > 0:
 		GHud.mob_counter = GHud.mob_counter - 1
 	queue_free()
-
-
-func _on_body_entered(body):
-	if body.is_in_group("dinosaurio"):
-		hit.emit()
