@@ -1,34 +1,34 @@
 extends Node2D
-@export var mob_scence: PackedScene
+@export var mob_scene: PackedScene
+
 var screen_size : Vector2i
 
 var PlayerInitialPosition
 
-func  _ready():
+func _ready():
 	screen_size = get_window().size
 	PlayerInitialPosition = $Player.position
 	GHud.start_game.connect(new_game)
-	
+
 func game_over():
 	GHud.update_high_score_label()
 	$MOBTimer.stop()
-	GHud.mob_counter = 0
-	
+
+
 func new_game():
-	print('empieza')
+	GHud.mob_counter = 0
 	$Floor.position.x = 0
 	$Player.position = PlayerInitialPosition
-	$MOBTimer.start() 
+	$MOBTimer.start()
 
-func _process (delta):
+func _process(_delta):
 	$Floor.position.x = $Player.position.x - 150
-
 
 func _on_mob_timer_timeout():
 	if GHud.mob_counter < 2:
-		var mob = mob_scence.instantiate()
+		var mob = mob_scene.instantiate()
 		mob.position.x = $Player.position.x + 1500
-		mob.position.y = 550
+		mob.position.y = 640
 		add_child(mob)
 		mob.hit.connect(game_over)
-		$MOBTimer.wait_time = 2
+		$MobTimer.wait_time = 2
