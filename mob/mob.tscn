@@ -1,22 +1,41 @@
-[gd_scene load_steps=3 format=3 uid="uid://bskf5fs7ach6l"]
+[gd_scene load_steps=8 format=3 uid="uid://bskf5fs7ach6l"]
 
 [ext_resource type="Script" path="res://mob/mob.gd" id="1_6uqre"]
 [ext_resource type="Texture2D" uid="uid://01kdw46muldm" path="res://icon.svg" id="2_a38v4"]
+[ext_resource type="PackedScene" uid="uid://b3qml3gbjn201" path="res://mob/2a.tscn" id="3_tlivh"]
+[ext_resource type="PackedScene" uid="uid://b0aidjxuv2cbt" path="res://mob/3a.tscn" id="4_umbrb"]
+[ext_resource type="PackedScene" uid="uid://qolihg3rmgfg" path="res://mob/4a.tscn" id="5_t4mln"]
+[ext_resource type="PackedScene" uid="uid://cgcwg0bdq1sr0" path="res://mob/5a.tscn" id="6_caox5"]
+[ext_resource type="PackedScene" uid="uid://b6u8evn2s2kt7" path="res://mob/stump.tscn" id="7_e5e48"]
 
 [node name="MOB" type="Area2D"]
-position = Vector2(-139, -6)
+position = Vector2(-262, -260)
 script = ExtResource("1_6uqre")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenNotifier2D" parent="."]
+visible = false
 position = Vector2(117, -11)
 
-[node name="SquareS" type="Sprite2D" parent="."]
-position = Vector2(64, -66)
+[node name="SquareA" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+scale = Vector2(4, 4)
 texture = ExtResource("2_a38v4")
 
 [node name="CollisionA" type="CollisionPolygon2D" parent="."]
-position = Vector2(64, -66)
+visible = false
+scale = Vector2(4, 4)
 polygon = PackedVector2Array(64, -61.1, 64, 59, 59.6, 64, -60.2, 64, -64, 61, -64, 58, -64, -59, -59, -63.8, 59.2, -64)
+
+[node name="2A" parent="." instance=ExtResource("3_tlivh")]
+
+[node name="3A" parent="." instance=ExtResource("4_umbrb")]
+
+[node name="4A" parent="." instance=ExtResource("5_t4mln")]
+
+[node name="5A" parent="." instance=ExtResource("6_caox5")]
+
+[node name="1A" parent="." instance=ExtResource("7_e5e48")]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

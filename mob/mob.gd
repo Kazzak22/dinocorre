@@ -9,7 +9,7 @@ func _ready():
 		$CollisionA
 	]
 	var sprites = [
-		$SquareS
+		$SquareA
 	]
 	
 	var random_int = randi() % collisions.size()

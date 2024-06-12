@@ -9,6 +9,7 @@ var is_playing = false
 var mob_counter = 0
 
 
+
 func update_score_label():
 	score = score + 10
 	$ScoreLable.text = 'Score: %d'%(score)

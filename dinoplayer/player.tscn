@@ -159,8 +159,8 @@ script = ExtResource("1_gj5ek")
 position = Vector2(27.1613, 65)
 scale = Vector2(7.56989, 8.01217)
 sprite_frames = SubResource("SpriteFrames_lt4lh")
-animation = &"run"
-frame_progress = 0.148034
+animation = &"crouch"
+frame_progress = 0.566659
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
