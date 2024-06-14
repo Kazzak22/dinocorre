@@ -4,10 +4,8 @@ signal start_game
 
 var score = 0
 var high_score = 0
-var is_mob_on_screen = true
 var is_playing = false
 var mob_counter = 0
-
 
 
 func update_score_label():

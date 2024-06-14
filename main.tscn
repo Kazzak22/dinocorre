@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwspn6j4c35jl"]
+[gd_scene load_steps=5 format=3 uid="uid://dwspn6j4c35jl"]
 
 [ext_resource type="PackedScene" uid="uid://pay5jw8wphgk" path="res://background/background.tscn" id="1_gg1hk"]
 [ext_resource type="Script" path="res://main.gd" id="1_wsp44"]
 [ext_resource type="PackedScene" uid="uid://cetyfowmnypke" path="res://floor/floor.tscn" id="2_2820f"]
 [ext_resource type="PackedScene" uid="uid://jkg12yn1snm4" path="res://dinoplayer/player.tscn" id="3_eye65"]
-[ext_resource type="PackedScene" uid="uid://bskf5fs7ach6l" path="res://mob/mob.tscn" id="5_8bc7l"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_wsp44")
@@ -23,6 +22,5 @@ limit_bottom = 0
 
 [node name="MOBTimer" type="Timer" parent="."]
 
-[node name="MOB" parent="." instance=ExtResource("5_8bc7l")]
-
+[connection signal="timeout" from="MOBTimer" to="." method="_on_mob_timer_timeout"]
 [connection signal="timeout" from="MOBTimer" to="." method="_on_mo_btimer_timeout"]
