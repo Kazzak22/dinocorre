@@ -4,8 +4,20 @@ signal hit
 
 func _ready():
 	GHud.mob_counter = GHud.mob_counter + 1
-	var collisions = [ $CollisionA, $CollisionB, $CollisionC, $CollisionD, $CollisionE]
-	var sprites = [$SpriteA, $SpriteB, $SpriteC, $SpriteD, $SpriteE]
+	var collisions = [
+	$CollisionA,
+	$CollisionB,
+	$CollisionC,
+	$CollisionD,
+	$CollisionE
+	]
+	var sprites = [
+		$SpriteA,
+		$SpriteB,
+		$SpriteC,
+		$SpriteD,
+		$SpriteE
+		]
 	
 	var random_int = randi() % collisions.size()
 	var selected_collision = collisions[random_int]

@@ -19,6 +19,7 @@ func game_over():
 	$MOBTimer.stop()
 
 func new_game():
+	GHud.mob_counter = 0
 	$Floor.position.x = 0
 	$Player.position = PlayerInitialPosition
 	$MOBTimer.start()
@@ -33,4 +34,4 @@ func _on_mob_timer_timeout():
 		mob.position.y = 640
 		add_child(mob)
 		mob.hit.connect(game_over)
-	print(GHud.mob_counter)
+		$MOBTimer.wait_time = 1
